@@ -129,7 +129,7 @@ bg_notfound = set([])
 pagesize = reportlab.lib.pagesizes.A4
 if formats.has_key(fotobook.get('productname')):
     pagesize = formats[fotobook.get('productname')]
-pdf = canvas.Canvas(mcfname + '.pdf', pagesize=pagesize)
+pdf = canvas.Canvas(mcfname.replace('.mcf', '.pdf'), pagesize=pagesize)
 
 
 # extract properties
@@ -263,7 +263,7 @@ for n in range(pagenum):
                     
                     
                     # compress image
-                    jpeg = tempfile.NamedTemporaryFile()
+                    jpeg = tempfile.NamedTemporaryFile('w+b', -1, '.jpg', 'mfc_', None, False)
 		    if im.mode == 'RGBA':
                     	im.save(recompressed.name, "PNG")
                     else:
