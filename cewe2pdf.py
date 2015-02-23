@@ -263,7 +263,7 @@ for n in range(pagenum):
                     
                     
                     # compress image
-                    jpeg = tempfile.NamedTemporaryFile('w+b', -1, '.jpg', 'mfc_', None, False)
+                    jpeg = tempfile.NamedTemporaryFile('w+b', -1, '.jpg', 'fotobook_', None, False)
 		    if im.mode == 'RGBA':
                     	im.save(recompressed.name, "PNG")
                     else:
